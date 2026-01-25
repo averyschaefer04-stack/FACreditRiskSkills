@@ -207,6 +207,146 @@ As a Cognition Mate, you actively guide the process:
 
 ---
 
+## Concrete Examples
+
+### Example 1: DCF Valuation Tool (Damodaran Style)
+
+**分头研究 findings:**
+- `numpy-financial` — NPV, IRR calculations
+- `yfinance` — Historical data, financials
+- Damodaran's spreadsheets — Reference for WACC, terminal value approaches
+
+**Product Overview:**
+```markdown
+# Intrinsic Value Calculator
+
+## The Problem
+Manually updating DCF models in Excel is error-prone and slow.
+Can't easily compare valuations across multiple companies.
+
+## Success Looks Like
+Enter a ticker, see intrinsic value with sensitivity analysis.
+Compare to current price. Export assumptions.
+
+## Building On
+- numpy-financial for NPV/IRR
+- yfinance for financials
+- Damodaran's WACC methodology
+
+## The Unique Part
+Interactive sensitivity analysis (growth rate × discount rate matrix)
+Side-by-side comparison of multiple tickers
+
+## Tech Stack
+- UI: Streamlit
+- Data: yfinance, FRED API
+- Calculations: numpy-financial, pandas
+```
+
+### Example 2: Portfolio Optimizer (Markowitz)
+
+**分头研究 findings:**
+- `PyPortfolioOpt` — Mean-variance optimization
+- `scipy.optimize` — Custom constraints
+- Risk parity approaches (Bridgewater style)
+
+**Product Overview:**
+```markdown
+# Portfolio Allocator
+
+## The Problem
+Excel Solver is clunky for portfolio optimization.
+Hard to visualize efficient frontier with constraints.
+
+## Success Looks Like
+Input tickers and constraints, see optimal weights.
+Visualize efficient frontier. Compare to equal-weight.
+
+## Building On
+- PyPortfolioOpt for optimization
+- yfinance for returns data
+
+## The Unique Part
+Sector constraints + ESG filters
+What-if analysis: "What if I exclude FAANG?"
+
+## Tech Stack
+- UI: Streamlit
+- Optimization: PyPortfolioOpt, cvxpy
+- Visualization: plotly
+```
+
+### Example 3: Factor Research (Open Source Asset Pricing)
+
+**分头研究 findings:**
+- Ken French Data Library — Factor returns
+- `alphalens` — Factor analysis
+- Open Source Asset Pricing — Replication code
+
+**Product Overview:**
+```markdown
+# Factor Backtester
+
+## The Problem
+Testing new factors requires too much boilerplate.
+Hard to compare factor performance across time periods.
+
+## Success Looks Like
+Define a factor, see IC, returns, drawdowns.
+Compare to Fama-French factors.
+
+## Building On
+- Ken French data
+- alphalens for analysis
+- Open Source Asset Pricing methodology
+
+## The Unique Part
+Custom factor definition interface
+Regime analysis (bull vs bear performance)
+
+## Tech Stack
+- UI: Streamlit
+- Data: pandas-datareader, wrds (if available)
+- Analysis: alphalens, statsmodels
+```
+
+### Example 4: Data Pipeline (Merging Sources)
+
+**分头研究 findings:**
+- `pandas` — Merging, cleaning
+- `great_expectations` — Data validation
+- `SQLAlchemy` — Database abstraction
+
+**Product Overview:**
+```markdown
+# Financial Data Hub
+
+## The Problem
+Data from Bloomberg, Refinitiv, internal sources don't align.
+No single source of truth for security master.
+
+## Success Looks Like
+Unified security master with audit trail.
+Data quality dashboard. API for downstream consumers.
+
+## Building On
+- pandas for transformations
+- great_expectations for validation
+- SQLAlchemy for storage
+
+## The Unique Part
+Fuzzy matching for security identifiers (CUSIP/ISIN/SEDOL)
+Conflict resolution rules when sources disagree
+
+## Tech Stack
+- UI: Streamlit (admin dashboard)
+- Backend: FastAPI
+- Database: PostgreSQL
+- Validation: great_expectations
+```
+
+---
+
 ## Guiding Principles
 
 - **Cognition Mates, not master/tool** — You're thinking partners, not instruction-follower
@@ -216,3 +356,4 @@ As a Cognition Mate, you actively guide the process:
 - **Problem + Success** — Start with pain and vision, not features
 - **Trust the process** — Let clarity emerge through conversation
 - **KISS** — Simple, logical, structured beats elegant and fancy
+- **Finance-first** — Default to quant/finance patterns and libraries

@@ -110,6 +110,22 @@ When in each stage, these patterns apply:
 - **VALIDATE**: Must have evidence before claiming complete
 - **REFLECT**: Must capture tech stack lessons
 
+## Utility Skills
+
+- `/driver:init` — Set up a new DRIVER project
+- `/driver:status` — Check where you are, get suggestions
+- `/driver:help` — Full reference with Chinese term explanations
+
+## Finance/Quant Examples
+
+| Project Type | Key Libraries | Reference |
+|--------------|---------------|-----------|
+| DCF Valuation | numpy-financial, yfinance | Damodaran |
+| Portfolio Optimization | PyPortfolioOpt, cvxpy | Markowitz |
+| Factor Research | alphalens, statsmodels | Open Source AP |
+| Risk Analytics | scipy.stats, VaR/CVaR | RiskMetrics |
+| Data Pipeline | pandas, great_expectations | ETL patterns |
+
 ## Proactive Flow
 
 As a Cognition Mate:
@@ -117,3 +133,4 @@ As a Cognition Mate:
 - If they agree, proceed directly — don't say "run /command"
 - Keep momentum through the DRIVER stages
 - Ask one question at a time, not multiple
+- For new users, suggest `/driver:init` or `/driver:help`
