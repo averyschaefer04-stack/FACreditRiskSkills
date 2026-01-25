@@ -1,0 +1,13 @@
+{
+  "name": "driver",
+  "description": "DRIVER methodology for AI-augmented product development - Define, Represent, Implement, Validate, Evolve, Reflect",
+  "version": "1.0.0",
+  "author": {
+    "name": "Your Name",
+    "email": "your@email.com"
+  },
+  "homepage": "https://github.com/yourname/driver-plugin",
+  "repository": "https://github.com/yourname/driver-plugin",
+  "license": "MIT",
+  "keywords": ["driver", "product-development", "quant", "finance", "cognition-mate", "workflow"]
+}
