@@ -1,6 +1,6 @@
 {
-  "name": "driver-dev",
-  "description": "Local development marketplace for DRIVER plugin",
+  "name": "driver-plugin",
+  "description": "DRIVER methodology for AI-augmented finance and quantitative tool development",
   "owner": {
     "name": "Cinder Zhang",
     "email": "cinderzhang@gmail.com"
