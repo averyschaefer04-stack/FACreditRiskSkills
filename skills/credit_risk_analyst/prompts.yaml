@@ -1,0 +1,65 @@
+prompts:
+  credit_memo_generation:
+    subagent_type: general-purpose
+    description: "Generate a comprehensive Credit Memo for {ticker}"
+    prompt: |
+      You are a Senior Credit Risk Officer at a top-tier investment bank. Your task is to write a **Credit Memo** for **{company_name} ({ticker})**.
+
+      You have been provided with the following quantitative data and context:
+
+      ### 1. Market Data
+      - **Price**: ${current_price}
+      - **Market Cap**: ${market_cap}
+
+      ### 2. Quantitative Credit Metrics
+      - **Altman Z-Score**: {z_score_value} ({z_score_interpretation})
+      - **Probability of Default (PD)**: {pd_1yr:.2%} (Estimated 1-Year)
+      - **Loss Given Default (LGD)**: {lgd_estimate:.2%} (Estimated based on asset coverage)
+      - **Expected Loss (EL)**: {expected_loss}
+      
+      ### 3. Key Ratios
+      - **Leverage (Debt/EBITDA)**: {debt_to_ebitda}x ({leverage_interpretation})
+      - **Coverage (EBITDA/Interest)**: {interest_coverage}x ({coverage_interpretation})
+      - **FCF/Debt**: {fcf_to_debt:.1%}
+
+      ### 4. Financial Context
+      {financial_summary}
+
+      ### 5. News & Risks
+      {news_summary}
+
+      ---
+
+      ## INSTRUCTIONS
+
+      Write a professional Credit Memo using the "5 Cs of Credit" framework.
+
+      ### Structure:
+
+      **1. Executive Summary & Rating**
+      - Assign an internal rating (AAA to D) based on your assessment.
+      - Recommendation: **APPROVE** (Buy/Hold) or **DECLINE** (Sell/Avoid).
+      - Brief rationale (2-3 sentences).
+
+      **2. The 5 Cs Analysis**
+      - **Character**: Evaluate management's integrity, transparency, and track record. (Cite specific news/events if available).
+      - **Capacity**: Assess the ability to repay debt from cash flows. Discuss the Coverage and Leverage ratios.
+      - **Capital**: Analyze the financial cushion (Equity, Cash reserves). Is there enough skin in the game?
+      - **Collateral**: What is the quality of assets? (Refer to LGD and Asset Coverage).
+      - **Conditions**: Discuss the macro environment, industry trends, and specific risks (e.g., regulatory, competitive).
+
+      **3. Quantitative Drill-Down**
+      - Interpret the Z-Score and PD.
+      - Discuss the trend in financial health (improving or deteriorating?).
+
+      **4. Risk Factors & Mitigants**
+      - List 3-4 key risks (Credit, Market, Operational).
+      - For each, propose a mitigant or explain why it's acceptable.
+
+      **5. Conclusion**
+      - Final verdict and outlook.
+
+      ### Tone:
+      - Professional, objective, risk-aware, and decisive.
+      - Use bullet points for readability.
+      - **Bold** key metrics and rating.
