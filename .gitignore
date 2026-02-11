@@ -1,3 +1,6 @@
+#API-keys
+.env
+
 # Python
 __pycache__/
 *.py[cod]
@@ -52,3 +55,11 @@ dcf_app/
 
 # Agent state (if any)
 .agent/
+
+# Local Configuration (Keys)
+.env
+.mcp.json
+
+# Financial Researcher Skill
+skills/financial-researcher/reports/*
+!skills/financial-researcher/reports/.gitkeep
